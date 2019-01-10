@@ -6,7 +6,10 @@ namespace FizzBuzzKata
     {
         public string Convert(int input)
         {
-            return "Fizz";
+            if (input % 3 == 0) 
+                return "Fizz";
+            
+            return input.ToString();
         }
     }
 }
