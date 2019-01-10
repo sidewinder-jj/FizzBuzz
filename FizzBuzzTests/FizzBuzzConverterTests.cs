@@ -9,14 +9,15 @@ namespace FizzBuzzTests
     {
         const string fizz = "Fizz";
         const string buzz = "Buzz";
+        const string fizzBuzz = "FizzBuzz";
 
         [Fact]
         public void FizzBuzzConverter_ReturnsFizz_MultipleOfThree()
         {
             var multipleOfThree = 3;
-            var fizzBuzz = new FizzBuzzConverter();
+            var converter = new FizzBuzzConverter();
 
-            var result = fizzBuzz.Convert(multipleOfThree);
+            var result = converter.Convert(multipleOfThree);
             
             Assert.Equal(fizz, result);
         }
@@ -25,9 +26,9 @@ namespace FizzBuzzTests
         public void FizzBuzzConverter_ReturnsInputNumber_NotMultipleOfThreeOrFive()
         {
             var numberWhichIsntMultiple = 2;
-            var fizzBuzz = new FizzBuzzConverter();
+            var converter = new FizzBuzzConverter();
 
-            var result = fizzBuzz.Convert(numberWhichIsntMultiple);
+            var result = converter.Convert(numberWhichIsntMultiple);
 
             Assert.Equal(numberWhichIsntMultiple.ToString(), result);
         }
@@ -36,11 +37,22 @@ namespace FizzBuzzTests
         public void FizzBuzzConverter_ReturnsBuzz_MultipleOfFive()
         {
             var multipleOfFive = 5;
-            var fizzBuzz = new FizzBuzzConverter();
+            var converter = new FizzBuzzConverter();
 
-            var result = fizzBuzz.Convert(multipleOfFive);
+            var result = converter.Convert(multipleOfFive);
 
             Assert.Equal(buzz, result);
+        }
+
+        [Fact]
+        public void FizzBuzzConverter_ReturnsFizzBuzz_MultipleOfThreeAndFive()
+        {
+            var multipleOfThreeAndFive = 15;
+            var converter = new FizzBuzzConverter();
+
+            var result = converter.Convert(multipleOfThreeAndFive);
+
+            Assert.Equal(fizzBuzz, result);
         }
     }
 }
