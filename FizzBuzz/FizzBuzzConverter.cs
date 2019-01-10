@@ -6,14 +6,19 @@ namespace FizzBuzzKata
     {
         public string Convert(int input)
         {
-            if (input % 3 == 0 && input % 5 == 0)
-                return "FizzBuzz";
+            var fizz = "Fizz";
+            var buzz = "Buzz";
+            var DivisibleByThree = (input % 3 == 0);
+            var DivisibleByFive = (input % 5 == 0);
             
-            if (input % 3 == 0) 
-                return "Fizz";
+            if (DivisibleByThree && DivisibleByFive)
+                return fizz+buzz;
+            
+            if (DivisibleByThree) 
+                return fizz;
 
-            if (input % 5 == 0)
-                return "Buzz";
+            if (DivisibleByFive)
+                return buzz;
             
             return input.ToString();
         }
