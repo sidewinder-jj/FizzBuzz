@@ -12,9 +12,9 @@ namespace FizzBuzzTests
         const string lucky = "Lucky";
 
         [Fact]
-        public void FizzBuzzConverter_ReturnsFizz_MultipleOfThree()
+        public void FizzBuzzConverter_ReturnsFizz_MultipleOfThreeNotContainingAThree()
         {
-            var multipleOfThree = 3;
+            var multipleOfThree = 9;
             var converter = new FizzBuzzConverter();
 
             var result = converter.Convert(multipleOfThree);
@@ -23,7 +23,7 @@ namespace FizzBuzzTests
         }
 
         [Fact]
-        public void FizzBuzzConverter_ReturnsInputNumber_NotMultipleOfThreeOrFive()
+        public void FizzBuzzConverter_ReturnsInputNumber_NotMultipleOfThreeOrFiveAndNotContainingAThree()
         {
             var numberWhichIsntMultiple = 2;
             var converter = new FizzBuzzConverter();
@@ -34,7 +34,7 @@ namespace FizzBuzzTests
         }
 
         [Fact]
-        public void FizzBuzzConverter_ReturnsBuzz_MultipleOfFive()
+        public void FizzBuzzConverter_ReturnsBuzz_MultipleOfFiveNotContainingAThree()
         {
             var multipleOfFive = 5;
             var converter = new FizzBuzzConverter();
@@ -56,12 +56,34 @@ namespace FizzBuzzTests
         }
 
         [Fact]
-        public void FizzBuzzConverter_ReturnsLucky_ResultContainsAThree()
+        public void FizzBuzzConverter_ReturnsLucky_ContainsAThree()
         {
-            var numberContainingAThree = 3;
+            var numberContainingAThree = 43;
             var converter = new FizzBuzzConverter();
 
             var result = converter.Convert(numberContainingAThree);
+
+            Assert.Equal(lucky, result);
+        }
+
+        [Fact]
+        public void FizzBuzzConverter_ReturnsLucky_ContainsAThreeAndMultipleOfThree()
+        {
+            var numberContainingAThreeAndMultipleOfThree = 3;
+            var converter = new FizzBuzzConverter();
+
+            var result = converter.Convert(numberContainingAThreeAndMultipleOfThree);
+
+            Assert.Equal(lucky, result);
+        }
+
+        [Fact]
+        public void FizzBuzzConverter_ReturnsLucky_ContainsAThreeAndMultipleOfFive()
+        {
+            var numberContainingAThreeAndMultipleOfFive = 3;
+            var converter = new FizzBuzzConverter();
+
+            var result = converter.Convert(numberContainingAThreeAndMultipleOfFive);
 
             Assert.Equal(lucky, result);
         }
