@@ -16,7 +16,7 @@ namespace FizzBuzzKata
 
             if (input.ToString().Contains(luckyNumber))
                 return lucky;
-                
+
             if (DivisibleByThree && DivisibleByFive)
                 return fizz+buzz;
             
