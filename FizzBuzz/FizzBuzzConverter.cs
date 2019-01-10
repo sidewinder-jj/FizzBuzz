@@ -10,7 +10,7 @@ namespace FizzBuzzKata
             var buzz = "Buzz";
             var DivisibleByThree = (input % 3 == 0);
             var DivisibleByFive = (input % 5 == 0);
-            
+                
             if (DivisibleByThree && DivisibleByFive)
                 return fizz+buzz;
             

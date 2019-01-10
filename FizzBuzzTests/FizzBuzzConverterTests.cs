@@ -9,7 +9,7 @@ namespace FizzBuzzTests
     {
         const string fizz = "Fizz";
         const string buzz = "Buzz";
-        const string fizzBuzz = "FizzBuzz";
+        const string lucky = "Lucky";
 
         [Fact]
         public void FizzBuzzConverter_ReturnsFizz_MultipleOfThree()
@@ -52,7 +52,18 @@ namespace FizzBuzzTests
 
             var result = converter.Convert(multipleOfThreeAndFive);
 
-            Assert.Equal(fizzBuzz, result);
+            Assert.Equal(fizz + buzz, result);
+        }
+
+        [Fact]
+        public void FizzBuzzConverter_ReturnsLucky_ResultContainsAThree()
+        {
+            var numberContainingAThree = 3;
+            var converter = new FizzBuzzConverter();
+
+            var result = converter.Convert(numberContainingAThree);
+
+            Assert.Equal(lucky, result);
         }
     }
 }
